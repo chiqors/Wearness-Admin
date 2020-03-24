@@ -1,0 +1,192 @@
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+.wrapper {
+    min-height: 100vh;
+    position: relative;
+    top: 0;
+    height: 100vh;
+}
+
+.left-side {
+    width: 22%;
+    color: #333333;
+    float: left;
+    z-index: 1001;
+    font-size: 17px;
+    font-weight: $font-weight-normal;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s;
+    height: 100vh;
+    min-height: 100vh;
+    @include respond(tab-port){
+      width: 30%;
+    }
+
+    @include respond(phone){
+      background: $primary-color !important;
+      width: 100%;
+      height: auto;
+      min-height: 0;
+    }
+
+    &--logo {
+        margin-bottom: 30px;
+        padding: 20px;
+        @include respond(tab-port){
+          margin-bottom: 0;
+          padding: 10px;
+          padding-left: 0;
+        }
+
+        @include respond(phone){
+        &-image{
+          width: 50%;
+          background: $white-color;
+          display: inline-block;
+          border-radius: 0 100px 100px 0;
+        }
+        &-icon{
+          width: 40%;
+          display: inline-block;
+          text-align: right;
+          button{
+            margin-left: auto;
+            display: block !important;
+          }
+        }
+        }
+    }
+
+    &--menu {
+        max-height: 73vh;
+        @include respond(phone){
+          width: 100%;
+          transition: all 1s;
+          position: absolute;
+          overflow: hidden;
+          height: 0 !important;
+          background: $white-color;
+          border-radius: 10px;
+        }
+
+        &-active{
+          height: 467px !important;
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+
+            li.active,
+            li:hover {
+                a {
+                  text-decoration: none;
+                  color: $primary2-color;
+                  transition: 0.5s;
+                  font-weight: 500;
+                    i:first-child {
+                        background: $primary2-color;
+                        color: $white-color;
+                        transition: 2s;
+                    }
+                    i:last-child {
+                        color: inherit;
+                        transition: 0.5s;
+                    }
+                }
+            }
+
+            li {
+                a {
+                    display: block;
+                    color: $grey3-color;
+                    transition: 0.5s;
+                    font-weight: 400;
+
+                    i:first-child {
+                        margin-right: 40px;
+                        padding: 1rem;
+                        border-radius: 0 25px 25px 0;
+                        color: $grey-color;
+                        transition: 0.5s;
+                    }
+
+                    i:last-child {
+                        float: right;
+                        margin-top: 15px;
+                        margin-right: 20px;
+                        color: $grey-color;
+                        transition: 0.5s;
+                    }
+                }
+            }
+
+            li:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+.main-side{
+  float: left;
+  height: auto;
+  padding-left: 1rem;
+  width: 78%;
+  @include respond(tab-port){
+    width: 70%;
+  }
+
+  @include respond(phone){
+    width: 100%;
+    padding-left: 0;
+  }
+
+
+  &--bg{
+    background: $primary-color;
+    color: $white-color;
+    height: 500px;
+    padding: 80px 60px;
+    @include respond(phone){
+      padding: 80px 15px;
+    }
+    border-radius: 0 0 0 168.5px;
+    font-weight: 300;
+
+    h1{
+      font-weight: 300;
+      color: $grey2-color;
+      span{
+        color: $white-color;
+        font-weight: 400;
+      }
+    }
+
+    p{
+      color: $grey2-color;
+    }
+
+  }
+  &--circle{
+    width: 50px;
+    height: 50px;
+  }
+}
+
+img.navbar-brand{
+  width: 250px;
+  @include respond(phone-mini){
+    width: 150px;
+  }
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0.85em;
+    white-space: nowrap;
+    color: black;
+}
